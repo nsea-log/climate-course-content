@@ -21,9 +21,9 @@ jobs:
 
   process-notebooks:
 
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
     # runs-on: ubuntu-20.04
-    # runs-on: climate_runner
+    runs-on: climate_runner
     steps:
       - name: Free up disk space
         uses: jlumbroso/free-disk-space@main
@@ -55,7 +55,7 @@ jobs:
       - name: Run Notebooks
         uses: ./.github/actions/check-notebooks
         with:
-          run_all: 'false'
+          run_all: 'true'
           # exec_flag: '--check-only'
           exec_flag: '--execute'
           # exercise-continue-on-error: true
